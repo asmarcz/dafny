@@ -1015,7 +1015,7 @@ greatest lemma Always(x: int)
 
 Both of these proofs follow the intuitive proofs given in
 [the example of the least solution](#sec-example-least-solution) and [the example of the greatest solution](#sec-example-greatest-solution).  Note that in these
-simple examples, the user is never bothered with either prefix predicates nor
+simple examples, the user is never bothered with neither prefix predicates nor
 prefix lemmas---the proofs just look like "what you'd expect".
 
 Since Dafny automatically inserts calls to the induction hypothesis at the beginning of
@@ -1035,14 +1035,14 @@ Instead, Dafny ensures the property through _auto-initialization_ and rules for 
 As explained in [section 5.3.1](#sec-type-characteristics), each type in Dafny is one of the following:
 
 - _auto-init type_: the type is nonempty and the compiler has some way to emit code that constructs a value
-- _nonempty type_: the type is nonempty, but the compiler does not know how perform automatic initialization
+- _nonempty type_: the type is nonempty, but the compiler does not know how to perform automatic initialization
 - _possibly empty type_: the type is not known for sure to have a value
 
 For a variable of an auto-init type, the compiler can initialize the variable automatically.
 This means that the variable can be used immediately after declaration, even if the program does not
 explicitly provide an initializing assignment.
 
-In a ghost context, one can an imagine a "ghost" that initializes variables. Unlike the compiler, such
+In a ghost context, one can imagine a "ghost" that initializes variables. Unlike the compiler, such
 a "ghost" does not need to emit code that constructs an initializing value; it suffices for the ghost to
 know that a value exists. Therefore, in a ghost context, a variable of a nonempty type can be used immediately
 after declaration.
